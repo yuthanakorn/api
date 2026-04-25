@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Inventory | iPhone Style</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="iphone-header">
+            <div class="header-content">
+                <h1>Inventory</h1>
+                <p id="date-display"></p>
+            </div>
+            <button id="add-btn" class="icon-btn">+</button>
+        </header>
+
+        <main class="content">
+            <section class="filters">
+                <button class="filter-chip active" data-filter="all">ทั้งหมด</button>
+                <button class="filter-chip" data-filter="low">สต็อกต่ำ</button>
+            </section>
+
+            <div id="product-list" class="product-list">
+                <!-- Products will be injected here -->
+                <div class="loading">กำลังโหลด...</div>
+            </div>
+        </main>
+
+        <!-- Modal for Adding Product -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>สินค้าใหม่</h2>
+                    <button id="close-modal" class="text-btn">ยกเลิก</button>
+                </div>
+                <form id="product-form">
+                    <div class="input-group">
+                        <label>ชื่อสินค้า</label>
+                        <input type="text" name="name" placeholder="ชื่อสินค้า" required>
+                    </div>
+                    <div class="input-group">
+                        <label>SKU</label>
+                        <input type="text" name="sku" placeholder="รหัสสินค้า" required>
+                    </div>
+                    <div class="input-group">
+                        <label>โซน</label>
+                        <input type="text" name="zone" placeholder="เช่น A1, B2" required>
+                    </div>
+                    <div class="input-group">
+                        <label>จำนวนเริ่มต้น</label>
+                        <input type="number" name="quantity" value="0">
+                    </div>
+                    <button type="submit" class="primary-btn">บันทึก</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
